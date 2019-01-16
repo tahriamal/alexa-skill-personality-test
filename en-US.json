@@ -1,0 +1,333 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "personality test",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "repeat the question "
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": [
+                        "restart the test"
+                    ]
+                },
+                {
+                    "name": "RecommendationIntent",
+                    "slots": [
+                        {
+                            "name": "personality",
+                            "type": "personalityType",
+                            "samples": [
+                                "{I_Am} {article} {personality}",
+                                "{personality}"
+                            ]
+                        },
+                        {
+                            "name": "I_Am",
+                            "type": "I_AmType"
+                        },
+                        {
+                            "name": "article",
+                            "type": "articleType"
+                        },
+                        {
+                            "name": "information",
+                            "type": "informationType",
+                            "samples": [
+                                "I rely on {information}",
+                                "I trust my {information}",
+                                "{information}"
+                            ]
+                        },
+                        {
+                            "name": "nature",
+                            "type": "natureType",
+                            "samples": [
+                                "I think {nature}",
+                                "{nature}"
+                            ]
+                        },
+                        {
+                            "name": "tactic",
+                            "type": "tacticType",
+                            "samples": [
+                                "I live life in a {tactic}",
+                                "I live my life {tactic}",
+                                "{tactic}",
+                                "I {tactic}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "yeah",
+                        "yes please",
+                        "what is my personality ",
+                        "Let's discover my hidden personality",
+                        "yes",
+                        "yes I do",
+                        "what is my personality type"
+                    ]
+                },
+                {
+                    "name": "RejectionIntent",
+                    "slots": [],
+                    "samples": [
+                        "no thank you",
+                        "neah",
+                        "no"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "personalityType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "introvert",
+                                "synonyms": [
+                                    "solitary",
+                                    "alone"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "extrovert",
+                                "synonyms": [
+                                    "social butterfly",
+                                    "social "
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "I_AmType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "I am"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "articleType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "an"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "a"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "informationType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "reality",
+                                "synonyms": [
+                                    "environment",
+                                    "rely on information from my environment",
+                                    "rely on information from the environment",
+                                    "direct interaction",
+                                    "apperance"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "guts",
+                                "synonyms": [
+                                    "I trust my guts",
+                                    "intuition"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "natureType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "deeper",
+                                "synonyms": [
+                                    "emotions have deeper meaning than that",
+                                    "have deeper meaning than that",
+                                    "or have deeper meaning than that",
+                                    "deeper meaning",
+                                    "deeper than that"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hormonal",
+                                "synonyms": [
+                                    "emotions are hormonal changes",
+                                    "hormones",
+                                    "hormoninal changes"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "tacticType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "plan",
+                                "synonyms": [
+                                    "planned manner",
+                                    "carefully manner",
+                                    "carefully planned manner",
+                                    "I have a to do list",
+                                    "plan ahead"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "improvise",
+                                "synonyms": [
+                                    "adapt myself to the situation",
+                                    "improvise and adapt myself to the situation",
+                                    "go with the flow"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "RecommendationIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "personality",
+                            "type": "personalityType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1201344690352.949515150012"
+                            }
+                        },
+                        {
+                            "name": "I_Am",
+                            "type": "I_AmType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "article",
+                            "type": "articleType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "information",
+                            "type": "informationType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1169731727021.1377735126910"
+                            }
+                        },
+                        {
+                            "name": "nature",
+                            "type": "natureType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1429441975869.1166825735857"
+                            }
+                        },
+                        {
+                            "name": "tactic",
+                            "type": "tacticType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1429441975869.79170155834"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "SKILL_RESPONSE"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1201344690352.949515150012",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Are you a social butterfly or solitary?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Would you say that you are an introvert or an extrovert?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1169731727021.1377735126910",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Do you trust your guts or rely on information from your environment ?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1429441975869.1166825735857",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Do you think that emotion are caused by hormonal changes or have deeper meaning than that"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1429441975869.79170155834",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Do you live life in a carefully planned manner or improvise and adapt yourself to the situation"
+                    }
+                ]
+            }
+        ]
+    }
+}
